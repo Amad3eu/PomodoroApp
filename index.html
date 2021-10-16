@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\scss\dist\Fuel.css">
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/flipclock.min.js"></script>
+    <script src="scripts/fonts.js"></script>
+    <script src="scripts/jqueryfunction.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/img/free-time.png" type="image/x-icon">
+    <title>Pomodoro Do Amadeu</title>
+</head>
+
+<body>
+
+    <div class="HeaderContainer">
+        <h2>PomodoroApp</h2>
+        <a href="https://github.com/Amad3eu">
+            <h4> https://github.com/Amad3eu </h4>
+        </a>
+
+
+    </div>
+
+    <div id="pomodoro">
+        <div id="clock">
+            <div id="timer">
+                <div id="title">Ready?</div>
+                <div id="countdown">
+                    <span id="minutes">30</span>
+                    <span id="seconds">00</span>
+                </div>
+                <div id="controls" class="reset">
+                    <div id="start"><i class="fas fa-play"></i> Start</div>
+                    <div id="pause"><i class="fas fa-pause"></i> Pause</div>
+                    <div id="reset"><i class="fas fa-sync-alt"></i> Reset</div>
+                </div>
+            </div>
+        </div>
+        <div id="options">
+            <div id="session">
+                <i id="incrSession" class="fas fa-angle-double-up"></i>
+                <span class="option-title">Session</span>
+                <input id="sessionInput" type="number" value="30" max="60" min="5">
+                <i id="decrSession" class="fas fa-angle-double-down"></i>
+            </div>
+            <div id="break">
+                <i id="incrBreak" class="fas fa-angle-double-up"></i>
+                <span class="option-title">Break</span>
+                <input id="breakInput" type="number" value="5" max="10" min="1">
+                <i id="decrBreak" class="fas fa-angle-double-down"></i>
+            </div>
+        </div>
+    </div>
+    <div id="audio-selector">
+        <div id="forest" class="theme">
+            🌲Forest</div>
+        <div id="ocean" class="theme">
+            🌊Ocean</div>
+        <div id="rainy" class="selected theme">
+            🌧Rainy</div>
+        <div id="peace" class="theme">
+            🧘 Peace</div>
+        <div id="Cafeteria" class="theme">
+            ☕ Caf&eacute;</div>
+    </div>
+    <audio loop autoplay="false" src="https://joeweaver.me/codepenassets/freecodecamp/challenges/build-a-pomodoro-clock/rain.mp3">
+
+    <script src="scripts/Pomodoro.js"></script>
+</body>

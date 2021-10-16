@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap');
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    outline: none;
+    user-select: none;
+}
+
+body {
+    align-items: center;
+    background: radial-gradient(ellipse at center, rgba(41, 68, 190, 0) 0%, rgba(77, 79, 207, 0) 43%, rgba(181, 198, 255, 0.43) 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    font-family: "Open Sans", sans-serif;
+    height: 100vh;
+    justify-content: center;
+    min-width: 184px;
+    overflow-x: hidden;
+    transition: background-color 0.2s;
+}
+
+#pomodoro {
+    margin-bottom: 43px;
+    max-width: 512px;
+    width: 100%;
+}
+
+#pomodoro #clock {
+    background: url("/img/clock (1).png") no-repeat center center;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -6.25vw;
+    padding: 40vw 0;
+}
+
+@media all and (min-width: 512px) {
+    #pomodoro #clock {
+        margin-bottom: -32px;
+        padding: 204px 0;
+    }
+}
+
+@media all and (max-width: 184px) {
+    #pomodoro #clock {
+        margin-bottom: -20px;
+        margin-bottom: -11.5px;
+        padding: 73px 0;
+    }
+}
+
+#pomodoro #clock #timer {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+#pomodoro #clock #timer #title {
+    color: #283b62d0;
+    font-size: 28px;
+    line-height: 28px;
+    margin: 3px 0 1px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+@media all and (max-width: 512px) {
+    #pomodoro #clock #timer #title {
+        font-size: 5.5vw;
+        line-height: 5.5vw;
+    }
+}
+
+@media all and (max-width: 184px) {
+    #pomodoro #clock #timer #title {
+        font-size: 10px;
+        line-height: 10px;
+    }
+}
+
+#pomodoro #clock #timer #countdown {
+    color: #2f4da0d0;
+    display: flex;
+    font-size: 43px;
+    font-weight: 600;
+    line-height: 43px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+@media all and (max-width: 512px) {
+    #pomodoro #clock #timer #countdown {
+        font-size: 8.4vw;
+        line-height: 8.4vw;
+    }
+}
+
+@media all and (max-width: 184px) {
+    #pomodoro #clock #timer #countdown {
+        font-size: 15.4px;
+        line-height: 15.4px;
+    }
+}
+
+#pomodoro #clock #timer #countdown #minutes::after {
+    content: ":";
+}
+
+#pomodoro #clock #timer #controls {
+    align-items: center;
+    display: flex;
+    color: #91b6e0;
+    flex-direction: column;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    margin-top: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#pomodoro #clock #timer #controls .fas,
+#pomodoro #clock #timer #controls .svg-inline--fa {
+    position: relative;
+}
+
+#pomodoro #clock #timer #controls #start,
+#pomodoro #clock #timer #controls #pause,
+#pomodoro #clock #timer #controls #reset {
+    white-space: nowrap;
+}
+
+#pomodoro #clock #timer #controls #start .fa-play {
+    font-size: 77%;
+    top: -1px;
+}
+
+#pomodoro #clock #timer #controls #start:hover {
+    color: #4989ff;
+}
+
+#pomodoro #clock #timer #controls #pause .fa-pause {
+    font-size: 90%;
+    top: -1px;
+    transform: scaleX(0.84);
+}
+
+#pomodoro #clock #timer #controls #pause:hover {
+    color: #4989ff;
+}
+
+#pomodoro #clock #timer #controls #reset {
+    position: absolute;
+    margin-top: 17.56px;
+    transition: margin-top 0.43s, opacity 0.43s;
+}
+
+#pomodoro #clock #timer #controls #reset .fa-sync-alt {
+    font-size: 84%;
+}
+
+#pomodoro #clock #timer #controls #reset:hover {
+    color: #4989ff;
+}
+
+#pomodoro #clock #timer #controls.reset #pause {
+    display: none;
+}
+
+#pomodoro #clock #timer #controls.reset #reset {
+    margin-top: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+#pomodoro #clock #timer #controls.started #start {
+    display: none;
+}
+
+#pomodoro #clock #timer #controls.started #reset {
+    opacity: 0;
+}
+
+#pomodoro #clock #timer #controls.paused #pause {
+    display: none;
+}
+
+@media all and (max-width: 512px) {
+    #pomodoro #clock #timer #controls {
+        font-size: 5.5vw;
+        line-height: 5.5vw;
+    }
+    #pomodoro #clock #timer #controls #start,
+    #pomodoro #clock #timer #controls #pause,
+    #pomodoro #clock #timer #controls #reset {
+        font-size: 3vw;
+        line-height: 3vw;
+    }
+    #pomodoro #clock #timer #controls #reset {
+        margin-top: 3.43vw;
+    }
+}
+
+@media all and (max-width: 184px) {
+    #pomodoro #clock #timer #controls {
+        font-size: 10px;
+        line-height: 10px;
+    }
+    #pomodoro #clock #timer #controls #start,
+    #pomodoro #clock #timer #controls #pause,
+    #pomodoro #clock #timer #controls #reset {
+        font-size: 5.5px;
+        line-height: 5.5px;
+    }
+    #pomodoro #clock #timer #controls #reset {
+        margin-top: 6.31px;
+    }
+}
+
+#pomodoro #options {
+    color: #4989ff;
+    display: flex;
+    font-size: 28px;
+    font-weight: normal;
+    justify-content: center;
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+#pomodoro #options .option-title {
+    color: #4989ff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: -6px;
+    text-transform: uppercase;
+}
+
+#pomodoro #options .fa-angle-double-up {
+    color: #4989ff;
+    cursor: pointer;
+}
+
+#pomodoro #options .fa-angle-double-down {
+    color: #4989ff;
+    cursor: pointer;
+}
+
+#pomodoro #options #session,
+#pomodoro #options #break {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#pomodoro #options input[type=number] {
+    background: linear-gradient(#cdd1f0, #9baed1);
+    border: 0;
+    border-bottom: calc(3px + .28vw) solid #758ab1;
+    border-radius: 10px;
+    color: #334e85bd;
+    font: bold calc(21px + 1.43vw) "Open Sans", sans-serif;
+    margin: calc(5px + .43vw) calc(3px + .43vw);
+    padding: calc(3px + .43vw) calc(5px + .43vw);
+    text-align: center;
+}
+
+#pomodoro #options input[type=number]::-webkit-inner-spin-button,
+#pomodoro #options input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+@media all and (min-width: 512px) {
+    #pomodoro #options input[type=number] {
+        border-bottom: 4.43px solid #6166a3;
+        font: bold 28.43px "Open Sans", sans-serif;
+        margin: 7.2px 5.2px;
+        padding: 5.2px 7.2px;
+    }
+}
+
+@media all and (max-width: 184px) {
+    #pomodoro #options input[type=number] {
+        border-bottom: 3.5px solid #2629e4;
+        font: bold 23.6px "Open Sans", sans-serif;
+        margin: 5.7px 3.7px;
+        padding: 3.7px 5.7px;
+    }
+}
+
+audio {
+    display: none;
+}
+
+#audio-selector {
+    display: inline-flex;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+#audio-selector .theme {
+    background: linear-gradient(to bottom, rgba(41, 68, 190, 0) 0%, rgba(77, 79, 207, 0) 43%, rgba(181, 198, 255, 0.43) 100%);
+    cursor: pointer;
+    flex: 1 1 25%;
+    font: 600 calc(9px + 1vw) "Open Sans", sans-serif;
+    margin: 0 2px 0 0;
+    padding: 2vw 1vw 5vw;
+    text-align: center;
+    transition: all 0.43s;
+    white-space: nowrap;
+}
+
+#audio-selector .theme:last-child {
+    margin-right: 0;
+}
+
+#audio-selector .theme:hover,
+#audio-selector .theme.selected {
+    background: linear-gradient(rgba(8, 9, 105, 0.212) 0%, rgba(130, 131, 209, 0.24) 43%, rgba(103, 115, 155, 0.24) 100%);
+}
+
+@media all and (min-width: 512px) {
+    #audio-selector .theme {
+        font-size: 15.33px;
+        padding: 9px 5px 25px;
+    }
+}
+
+@media all and (max-width: 300px) {
+    #audio-selector {
+        flex-wrap: wrap;
+    }
+    #audio-selector .theme {
+        flex: 1 0 100%;
+        font-size: 14px;
+        padding: 7px;
+    }
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(transparent, transparent), url(/img/fabrizio-conti-kXVogATbFgA-unsplash.jpg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    /* Just some styling to make the headline big and obvoius  */
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: .60em;
+    letter-spacing: -.55rem;
+    padding: .6rem;
+}
+
+h4 {
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    font-size: 16px;
+}
