@@ -1,6 +1,7 @@
 # PomodoroClock Scss/Js
 
-This pomodoro is an example that I like to learn something creatively, it's a clock pomodoro, it allows you to dare relatively relaxing sounds, and you can time your work time.
+⏱This pomodoro is an example that I like to learn something creatively, it's a clock pomodoro, it allows you to dare relatively relaxing sounds, and you can time your work time.
+
 ## :mortar_board: Author
 
 <table align="center">
